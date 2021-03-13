@@ -1,0 +1,9 @@
+C:\Work\D\sai\Pluralsight\LoudInSight\LoundInSight.BusinessObject\bin\Debug\netstandard2.0\LoundInSight.BusinessObject.deps.json
+C:\Work\D\sai\Pluralsight\LoudInSight\LoundInSight.BusinessObject\bin\Debug\netstandard2.0\LoundInSight.BusinessObject.dll
+C:\Work\D\sai\Pluralsight\LoudInSight\LoundInSight.BusinessObject\bin\Debug\netstandard2.0\LoundInSight.BusinessObject.pdb
+C:\Work\D\sai\Pluralsight\LoudInSight\LoundInSight.BusinessObject\obj\Debug\netstandard2.0\LoundInSight.BusinessObject.csprojAssemblyReference.cache
+C:\Work\D\sai\Pluralsight\LoudInSight\LoundInSight.BusinessObject\obj\Debug\netstandard2.0\LoundInSight.BusinessObject.AssemblyInfoInputs.cache
+C:\Work\D\sai\Pluralsight\LoudInSight\LoundInSight.BusinessObject\obj\Debug\netstandard2.0\LoundInSight.BusinessObject.AssemblyInfo.cs
+C:\Work\D\sai\Pluralsight\LoudInSight\LoundInSight.BusinessObject\obj\Debug\netstandard2.0\LoundInSight.BusinessObject.csproj.CoreCompileInputs.cache
+C:\Work\D\sai\Pluralsight\LoudInSight\LoundInSight.BusinessObject\obj\Debug\netstandard2.0\LoundInSight.BusinessObject.dll
+C:\Work\D\sai\Pluralsight\LoudInSight\LoundInSight.BusinessObject\obj\Debug\netstandard2.0\LoundInSight.BusinessObject.pdb

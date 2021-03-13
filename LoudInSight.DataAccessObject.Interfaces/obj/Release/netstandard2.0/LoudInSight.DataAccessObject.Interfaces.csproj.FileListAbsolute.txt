@@ -1,0 +1,12 @@
+C:\Work\D\sai\Pluralsight\LoudInSight\LoudInSight.DataAccessObject.Interfaces\bin\Release\netstandard2.0\LoudInSight.DataAccessObject.Interfaces.deps.json
+C:\Work\D\sai\Pluralsight\LoudInSight\LoudInSight.DataAccessObject.Interfaces\bin\Release\netstandard2.0\LoudInSight.DataAccessObject.Interfaces.dll
+C:\Work\D\sai\Pluralsight\LoudInSight\LoudInSight.DataAccessObject.Interfaces\bin\Release\netstandard2.0\LoudInSight.DataAccessObject.Interfaces.pdb
+C:\Work\D\sai\Pluralsight\LoudInSight\LoudInSight.DataAccessObject.Interfaces\bin\Release\netstandard2.0\LoudInSight.Entities.dll
+C:\Work\D\sai\Pluralsight\LoudInSight\LoudInSight.DataAccessObject.Interfaces\bin\Release\netstandard2.0\LoudInSight.Entities.pdb
+C:\Work\D\sai\Pluralsight\LoudInSight\LoudInSight.DataAccessObject.Interfaces\obj\Release\netstandard2.0\LoudInSight.DataAccessObject.Interfaces.csprojAssemblyReference.cache
+C:\Work\D\sai\Pluralsight\LoudInSight\LoudInSight.DataAccessObject.Interfaces\obj\Release\netstandard2.0\LoudInSight.DataAccessObject.Interfaces.AssemblyInfoInputs.cache
+C:\Work\D\sai\Pluralsight\LoudInSight\LoudInSight.DataAccessObject.Interfaces\obj\Release\netstandard2.0\LoudInSight.DataAccessObject.Interfaces.AssemblyInfo.cs
+C:\Work\D\sai\Pluralsight\LoudInSight\LoudInSight.DataAccessObject.Interfaces\obj\Release\netstandard2.0\LoudInSight.DataAccessObject.Interfaces.csproj.CoreCompileInputs.cache
+C:\Work\D\sai\Pluralsight\LoudInSight\LoudInSight.DataAccessObject.Interfaces\obj\Release\netstandard2.0\LoudInSight.DataAccessObject.Interfaces.csproj.CopyComplete
+C:\Work\D\sai\Pluralsight\LoudInSight\LoudInSight.DataAccessObject.Interfaces\obj\Release\netstandard2.0\LoudInSight.DataAccessObject.Interfaces.dll
+C:\Work\D\sai\Pluralsight\LoudInSight\LoudInSight.DataAccessObject.Interfaces\obj\Release\netstandard2.0\LoudInSight.DataAccessObject.Interfaces.pdb

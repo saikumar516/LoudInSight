@@ -1,0 +1,12 @@
+C:\Work\D\sai\Pluralsight\LoudInSight\LoudInSight.BusinessObject.Interfaces\bin\Release\netstandard2.0\LoudInSight.BusinessObject.Interfaces.deps.json
+C:\Work\D\sai\Pluralsight\LoudInSight\LoudInSight.BusinessObject.Interfaces\bin\Release\netstandard2.0\LoudInSight.BusinessObject.Interfaces.dll
+C:\Work\D\sai\Pluralsight\LoudInSight\LoudInSight.BusinessObject.Interfaces\bin\Release\netstandard2.0\LoudInSight.BusinessObject.Interfaces.pdb
+C:\Work\D\sai\Pluralsight\LoudInSight\LoudInSight.BusinessObject.Interfaces\bin\Release\netstandard2.0\LoudInSight.Entities.dll
+C:\Work\D\sai\Pluralsight\LoudInSight\LoudInSight.BusinessObject.Interfaces\bin\Release\netstandard2.0\LoudInSight.Entities.pdb
+C:\Work\D\sai\Pluralsight\LoudInSight\LoudInSight.BusinessObject.Interfaces\obj\Release\netstandard2.0\LoudInSight.BusinessObject.Interfaces.csprojAssemblyReference.cache
+C:\Work\D\sai\Pluralsight\LoudInSight\LoudInSight.BusinessObject.Interfaces\obj\Release\netstandard2.0\LoudInSight.BusinessObject.Interfaces.AssemblyInfoInputs.cache
+C:\Work\D\sai\Pluralsight\LoudInSight\LoudInSight.BusinessObject.Interfaces\obj\Release\netstandard2.0\LoudInSight.BusinessObject.Interfaces.AssemblyInfo.cs
+C:\Work\D\sai\Pluralsight\LoudInSight\LoudInSight.BusinessObject.Interfaces\obj\Release\netstandard2.0\LoudInSight.BusinessObject.Interfaces.csproj.CoreCompileInputs.cache
+C:\Work\D\sai\Pluralsight\LoudInSight\LoudInSight.BusinessObject.Interfaces\obj\Release\netstandard2.0\LoudInSight.BusinessObject.Interfaces.csproj.CopyComplete
+C:\Work\D\sai\Pluralsight\LoudInSight\LoudInSight.BusinessObject.Interfaces\obj\Release\netstandard2.0\LoudInSight.BusinessObject.Interfaces.dll
+C:\Work\D\sai\Pluralsight\LoudInSight\LoudInSight.BusinessObject.Interfaces\obj\Release\netstandard2.0\LoudInSight.BusinessObject.Interfaces.pdb

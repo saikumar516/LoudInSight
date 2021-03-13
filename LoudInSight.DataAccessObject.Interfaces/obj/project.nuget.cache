@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "CMDLfoaBKI8wAFgDgmP8hVwkkMJWXHK/lQHoDfuEE26DASDytw4o6SmXkz9XCD61VrqWRTwAMKqgPXa4nGd/nw==",
+  "success": true,
+  "projectFilePath": "F:\\LoudInSight\\LoudInSight.DataAccessObject.Interfaces\\LoudInSight.DataAccessObject.Interfaces.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Sai\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Sai\\.nuget\\packages\\mongodb.bson\\2.12.0\\mongodb.bson.2.12.0.nupkg.sha512",
+    "C:\\Users\\Sai\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\Sai\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
