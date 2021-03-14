@@ -10,6 +10,8 @@ using LoudInSight.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 
 namespace LoudInSight.api.Controllers
@@ -19,11 +21,18 @@ namespace LoudInSight.api.Controllers
     [AllowAnonymous]
     public class LoginController : ControllerBase
     {
-        private readonly ILoginManager loginManager;
-        public LoginController(IDatabaseSettings settings,ILoginManager _loginService)
+		private readonly IDatabaseSettings settings;
+		private readonly ILoginManager loginManager;
+		private readonly IConfiguration configuration;
+        private readonly ILogger<LoginController> _logger;
+
+        public LoginController(IDatabaseSettings _settings,ILoginManager _loginService, IConfiguration _configuration,ILogger<LoginController> logger)
         {
-            loginManager = _loginService;
-        }
+			this.settings = _settings;
+			loginManager = _loginService;
+			this.configuration = _configuration;
+            _logger = logger;
+		}
         [HttpPost]
         [Route("Login")]
         public IActionResult Login(Login login)
@@ -43,13 +52,13 @@ namespace LoudInSight.api.Controllers
                 //return RedirectToAction("index", "home");
 
                 var authClaims = new List<Claim> {
-                        new Claim(ClaimTypes.Name,user.Email),
+                        new Claim(ClaimTypes.Name,user.Email,hasedPassword,configuration["JWT:ValidIssue"],configuration["JWT:ValidAudience"]),
                         new Claim(JwtRegisteredClaimNames.Jti,Guid.NewGuid().ToString())
                     };
-                var authSigninKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("SecretApptest12348576"));
+                var authSigninKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JWT:Secret"]));
                 var token = new JwtSecurityToken(
-                    issuer: "http://localhost:63789",
-                    audience: "User",
+                    issuer: configuration["JWT:ValidIssue"],
+                    audience: configuration["JWT:ValidAudience"],
                     expires: DateTime.Now.AddMinutes(30),
                     claims: authClaims,
                     signingCredentials: new SigningCredentials(authSigninKey, SecurityAlgorithms.HmacSha256)

@@ -29,8 +29,8 @@ namespace LoudInSight.api
 
         private readonly PasswordHasherCompatibilityMode _compatibilityMode;
         private readonly int _iterCount;
-        private readonly RandomNumberGenerator _rng;
-
+        private readonly RNGCryptoServiceProvider _rng;
+        private static byte[] salt = new byte[16] { 11, 22, 33, 44, 55, 66, 77, 88, 99, 100, 111, 122, 133, 144, 155, 166 };
         /// <summary>
         /// Creates a new instance of <see cref="PasswordHasher{TUser}"/>.
         /// </summary>
@@ -58,7 +58,7 @@ namespace LoudInSight.api
             //        throw new Exception(); //InvalidOperationException(Resources.InvalidPasswordHasherCompatibilityMode);
             //}
 
-            _rng = RandomNumberGenerator.Create();
+            //_rng =  RNGCryptoServiceProvider.Create();
         }
 
 #if NETSTANDARD2_0 || NET461
@@ -98,7 +98,7 @@ namespace LoudInSight.api
 
             if (_compatibilityMode == PasswordHasherCompatibilityMode.IdentityV2)
             {
-                return Convert.ToBase64String(HashPasswordV2(password, _rng));
+                return Convert.ToBase64String(HashPasswordV2(password));
             }
             else
             {
@@ -106,16 +106,13 @@ namespace LoudInSight.api
             }
         }
 
-        private static byte[] HashPasswordV2(string password, RandomNumberGenerator rng)
+        private static byte[] HashPasswordV2(string password)
         {
             const KeyDerivationPrf Pbkdf2Prf = KeyDerivationPrf.HMACSHA1; // default for Rfc2898DeriveBytes
             const int Pbkdf2IterCount = 1000; // default for Rfc2898DeriveBytes
             const int Pbkdf2SubkeyLength = 256 / 8; // 256 bits
             const int SaltSize = 128 / 8; // 128 bits
-
-            // Produce a version 2 (see comment above) text hash.
-            byte[] salt = new byte[SaltSize];
-            rng.GetBytes(salt);
+           
             byte[] subkey = KeyDerivation.Pbkdf2(password, salt, Pbkdf2Prf, Pbkdf2IterCount, Pbkdf2SubkeyLength);
 
             var outputBytes = new byte[1 + SaltSize + Pbkdf2SubkeyLength];
@@ -125,7 +122,7 @@ namespace LoudInSight.api
             return outputBytes;
         }
 
-        private byte[] HashPasswordV3(string password, RandomNumberGenerator rng)
+        private byte[] HashPasswordV3(string password, RNGCryptoServiceProvider rng)
         {
             return HashPasswordV3(password, rng,
                 prf: KeyDerivationPrf.HMACSHA256,
@@ -134,11 +131,11 @@ namespace LoudInSight.api
                 numBytesRequested: 256 / 8);
         }
 
-        private static byte[] HashPasswordV3(string password, RandomNumberGenerator rng, KeyDerivationPrf prf, int iterCount, int saltSize, int numBytesRequested)
+        private static byte[] HashPasswordV3(string password, RNGCryptoServiceProvider rng, KeyDerivationPrf prf, int iterCount, int saltSize, int numBytesRequested)
         {
             // Produce a version 3 (see comment above) text hash.
             byte[] salt = new byte[saltSize];
-            rng.GetBytes(salt);
+            //rng.GetBytes(salt);
             byte[] subkey = KeyDerivation.Pbkdf2(password, salt, prf, iterCount, numBytesRequested);
 
             var outputBytes = new byte[13 + salt.Length + subkey.Length];
