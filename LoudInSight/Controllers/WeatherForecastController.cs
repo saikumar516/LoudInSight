@@ -10,7 +10,7 @@ namespace LoudInSight.api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class HomeController : ControllerBase
+    public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
         {
@@ -19,7 +19,7 @@ namespace LoudInSight.api.Controllers
 
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public WeatherForecastController(ILogger<HomeController> logger)
         {
             _logger = logger;
         }
