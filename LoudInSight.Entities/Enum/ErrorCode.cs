@@ -4,11 +4,10 @@ using System.Text;
 
 namespace LoudInSight.Entities
 {
-    public enum CollectionName
-    {
-        None=0,
-
-        User = 1,
-
-    }
+	public enum ErrorCode
+	{
+		NoError=0,
+		UserRegisteredWithMobileNumber=1,
+		UserRegisterWithEmail=1,
+	}
 }

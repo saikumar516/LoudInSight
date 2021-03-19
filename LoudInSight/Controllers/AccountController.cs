@@ -32,13 +32,21 @@ namespace LoudInSight.api.Controllers
 
         [HttpPost]
         [Route("RegisterUser")]
-        public string Register(UserRegistration userRegistration)
+        public async Task<UserRegistration> Register(UserRegistration userRegistration)
         {
-            var passwordHasher = new PasswordHasher<UserRegistration>();
-            var hasedPassword = passwordHasher.HashPassword(userRegistration, userRegistration.Password);
-            userRegistration.Password = hasedPassword;
-            accountManager.Register(userRegistration);
-            return "Register";
+			try
+			{
+				var passwordHasher = new PasswordHasher<UserRegistration>();
+				var hasedPassword = passwordHasher.HashPassword(userRegistration, userRegistration.Password);
+				userRegistration.Password = hasedPassword;
+				return await accountManager.Register(userRegistration);
+			}
+			catch (Exception ex)
+			{
+
+				throw ex;
+			}
+            
         }
     }
 }

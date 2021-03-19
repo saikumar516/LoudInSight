@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,11 +9,13 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -64,44 +67,7 @@ namespace LoudInSight.api
             });
 
             SwaggerExtension.AddSwagger(services);
-            //      //services.AddSwaggerGen();
-            //      services.AddSwaggerGen(c =>
-            //      {
-            //                //c.SwaggerDoc("v1", new Info { Title = "API WSVAP (WebSmartView)", Version = "v1" });
-            //                // c.ResolveConflictingActions(apiDescriptions => apiDescriptions.First()); //This line
-            //                c.SwaggerDoc("v1", new OpenApiInfo { Title = "You api title", Version = "v1" });
-            //          c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
-            //          {
-            //              Description = @"JWT Authorization header using the Bearer scheme. \r\n\r\n 
-            //                                  Enter 'Bearer' [space] and then your token in the text input below.
-            //                                  \r\n\r\nExample: 'Bearer 12345abcdef'",
-            //              Name = "Authorization",
-            //              In = ParameterLocation.Header,
-            //              Type = SecuritySchemeType.ApiKey,
-            //              Scheme = "Bearer"
-            //          });
-
-            //          c.AddSecurityRequirement(new OpenApiSecurityRequirement()
-            //{
-            //                    {
-            //                      new OpenApiSecurityScheme
-            //                      {
-            //                        Reference = new OpenApiReference
-            //                          {
-            //                            Type = ReferenceType.SecurityScheme,
-            //                            Id = "Bearer"
-            //                          },
-            //                          Scheme = "oauth2",
-            //                          Name = "Bearer",
-            //                          In = ParameterLocation.Header,
-
-            //                        },
-            //                        new List<string>()
-            //                      }
-            //          });
-
-            //      });
-
+            
             DependencyContainer.RegisterServices(services);
         }
 
@@ -126,6 +92,13 @@ namespace LoudInSight.api
                 c.RoutePrefix = string.Empty;
 
             });
+            app.UseStaticFiles();
+
+            //app.UseStaticFiles(new StaticFileOptions()
+            //{
+            //    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "Content")),
+            //    RequestPath = new PathString("/index")
+            //});
 
             app.UseHttpsRedirection();
             app.UseAuthentication();

@@ -4,13 +4,7 @@ using System.Text;
 
 namespace LoudInSight.Entities
 {
-    public class UserRegistration: Base
+    public class UserRegistration: User
     {
-       // public long _id { get; set; }
-        public string Email { get; set; }
-        public string MobileNumber { get; set; }
-        public string Password { get; set; }
-        public string Country { get; set; }
-        public string City { get; set; }
     }
 }

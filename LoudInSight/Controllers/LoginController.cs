@@ -35,13 +35,13 @@ namespace LoudInSight.api.Controllers
 		}
         [HttpPost]
         [Route("Login")]
-        public IActionResult Login(Login login)
+        public async Task<IActionResult> Login(Login login)
         {
             var passwordHasher = new PasswordHasher<Login>();
             string password = login.Password;
             var hasedPassword = passwordHasher.HashPassword(login, login.Password);
             login.Password = hasedPassword;
-            var user =  loginManager.Login(login);
+            var user = await loginManager.Login(login);
             if (user != null && passwordHasher.VerifyHashedPassword(user, hasedPassword, password) == Microsoft.AspNetCore.Identity.PasswordVerificationResult.Success)
             {
                 

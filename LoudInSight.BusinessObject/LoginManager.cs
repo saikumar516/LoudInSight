@@ -5,6 +5,7 @@ using LoudInSight.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace LoudInSight.BusinessObject
 {
@@ -18,9 +19,9 @@ namespace LoudInSight.BusinessObject
             loginDAO = _loginDAO;
         }
 
-        public Login Login(Login login)
+        public async Task<Login> Login(Login login)
         {
-           return loginDAO.Login(login);
+           return await loginDAO.Login(login);
         }
     }
 }

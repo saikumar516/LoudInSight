@@ -4,6 +4,7 @@ using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace LoudInSight.DataAccessObject
 {
@@ -16,12 +17,44 @@ namespace LoudInSight.DataAccessObject
         {
             var client = new MongoClient(_settings.ConnectionString);
             var database = client.GetDatabase(_settings.DatabaseName);
-            _userRegistration = database.GetCollection<UserRegistration>(CollectionName.UserTable.ToString());
+            _userRegistration = database.GetCollection<UserRegistration>(CollectionName.User.ToString());
         }
-        public bool Register(UserRegistration userRegistration)
+        public async Task<UserRegistration> Register(UserRegistration userRegistration)
         {
-            _userRegistration.InsertOne(userRegistration);
-            return true;
+			try
+			{
+				await _userRegistration.InsertOneAsync(userRegistration);
+				return userRegistration;
+			}
+			catch (Exception)
+			{
+
+				throw;
+			}
+        }
+        public async Task<bool> EmailExistsWithOtherUser(UserRegistration userRegistration)
+        {
+			try
+			{
+				return await _userRegistration.FindAsync(l => l.Email == userRegistration.Email).Result.AnyAsync();
+			}
+			catch (Exception)
+			{
+
+				throw;
+			}
+        }
+        public async Task<bool> MobileNumberExistsWithOtherUser(UserRegistration userRegistration)
+        {
+			try
+			{
+				return await _userRegistration.FindAsync(l => l.MobileNumber == userRegistration.MobileNumber).Result.AnyAsync();
+			}
+			catch (Exception)
+			{
+
+				throw;
+			}
         }
     }
 }
