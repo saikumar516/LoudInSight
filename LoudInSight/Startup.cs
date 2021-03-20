@@ -41,6 +41,7 @@ namespace LoudInSight.api
             services.AddSingleton<IDatabaseSettings>(sp => sp.GetRequiredService<IOptions<DatabaseSettings>>().Value);
 
             services.AddControllers();
+            services.AddCors(options => { options.AddPolicy("CorsPolicy", builder => builder.AllowAnyOrigin()); });
             services.AddAuthentication(a =>
             {
                 a.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -102,6 +103,7 @@ namespace LoudInSight.api
 
             app.UseHttpsRedirection();
             app.UseAuthentication();
+            app.UseCors("CorsPolicy");
             app.UseRouting();
             //app.UseMvcWithDefaultRoute();
 
